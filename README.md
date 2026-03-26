@@ -7,6 +7,10 @@ No diretório do projeto, crie/ative o ambiente virtual do Python:
 <pre>python -m venv venv</pre>
 <pre>.\venv\Scripts\activate</pre>
 
+Instale as dependências do projeto com o comando abaixo:
+
+<pre>pip install -r requirements.txt</pre>
+
 ## Ordem de execução
 
 1. Subir o banco de dados com Docker:

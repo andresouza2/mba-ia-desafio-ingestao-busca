@@ -7,7 +7,10 @@ asyncpg==0.30.0
 attrs==25.3.0
 cachetools==5.5.2
 certifi==2025.8.3
+cffi==2.0.0
 charset-normalizer==3.4.3
+colorama==0.4.6
+cryptography==46.0.5
 dataclasses-json==0.6.7
 distro==1.9.0
 filetype==1.2.0
@@ -15,6 +18,7 @@ frozenlist==1.7.0
 google-ai-generativelanguage==0.6.18
 google-api-core==2.25.1
 google-auth==2.40.3
+google-genai==1.68.0
 googleapis-common-protos==1.70.0
 greenlet==3.2.4
 grpcio==1.74.0
@@ -28,6 +32,7 @@ jiter==0.10.0
 jsonpatch==1.33
 jsonpointer==3.0.0
 langchain==0.3.27
+langchain-classic==1.0.3
 langchain-community==0.3.27
 langchain-core==0.3.74
 langchain-google-genai==2.1.9
@@ -52,6 +57,7 @@ psycopg-pool==3.2.6
 psycopg2-binary==2.9.10
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
+pycparser==3.0
 pydantic==2.11.7
 pydantic-settings==2.10.1
 pydantic_core==2.33.2
@@ -70,6 +76,10 @@ tqdm==4.67.1
 typing-inspect==0.9.0
 typing-inspection==0.4.1
 typing_extensions==4.15.0
+tzdata==2025.3
 urllib3==2.5.0
+uuid_utils==0.14.1
+websockets==16.0
+xxhash==3.6.0
 yarl==1.20.1
 zstandard==0.24.0

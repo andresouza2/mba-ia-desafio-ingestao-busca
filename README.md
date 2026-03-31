@@ -15,8 +15,6 @@
    - `PG_VECTOR_COLLECTION_NAME`: nome da coleção a ser criada no pgvector (ex: `documents`)
    - `PDF_PATH`: caminho para o arquivo PDF a ser ingerido (padrão: `document.pdf`)
 
-> **Atenção:** o arquivo `.env` contém dados sensíveis e **não deve ser versionado**. Certifique-se de que ele está listado no `.gitignore`.
-
 ---
 
 ## Inicialização do ambiente virtual (venv)

@@ -1,5 +1,24 @@
 # Desafio MBA Engenharia de Software com IA - Full Cycle
 
+## Configuração das variáveis de ambiente
+
+1. Copie o arquivo de exemplo para criar o seu `.env` local:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+1. Preencha os valores no arquivo `.env` com suas credenciais:
+
+   - `OPENAI_API_KEY`: sua chave de API da OpenAI
+   - `DATABASE_URL`: URL de conexão com o banco de dados PostgreSQL (ex: `postgresql://user:password@localhost:5432/dbname`)
+   - `PG_VECTOR_COLLECTION_NAME`: nome da coleção a ser criada no pgvector (ex: `documents`)
+   - `PDF_PATH`: caminho para o arquivo PDF a ser ingerido (padrão: `document.pdf`)
+
+> **Atenção:** o arquivo `.env` contém dados sensíveis e **não deve ser versionado**. Certifique-se de que ele está listado no `.gitignore`.
+
+---
+
 ## Inicialização do ambiente virtual (venv)
 
 No diretório do projeto, crie/ative o ambiente virtual do Python:

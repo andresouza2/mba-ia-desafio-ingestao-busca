@@ -9,14 +9,14 @@ from langchain_core.documents import Document
 from langchain_postgres import PGVector
 
 load_dotenv()
-for k in ("OPENAI_API_KEY", "PGVECTOR_URL"):
+for k in ("OPENAI_API_KEY", "DATABASE_URL"):
     if not os.getenv(k):
         raise RuntimeError(f"A variável de ambiente {k} não está definida")
 
-_pgvector_collection = os.getenv("PGVECTOR_COLLECTION") or os.getenv("PGVETCOR_COLLECTION")
+_pgvector_collection = os.getenv("PGVECTOR_COLLECTION") or os.getenv("PG_VECTOR_COLLECTION_NAME")
 if not _pgvector_collection:
     raise RuntimeError(
-        "Defina PGVECTOR_COLLECTION no .env (PGVETCOR_COLLECTION também é aceito por compatibilidade)"
+        "Defina PGVECTOR_COLLECTION no .env (PG_VECTOR_COLLECTION_NAME também é aceito por compatibilidade)"
     )
 
 project_root = Path(__file__).resolve().parent.parent
@@ -48,7 +48,7 @@ embeddings = OpenAIEmbeddings(model=os.getenv("OPENAI_EMBEDDING_MODEL","text-emb
 store = PGVector(
     embeddings=embeddings,
     collection_name=_pgvector_collection,
-    connection=os.getenv("PGVECTOR_URL"),
+    connection=os.getenv("DATABASE_URL"),
     use_jsonb=True
 )
 

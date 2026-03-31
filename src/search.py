@@ -47,13 +47,13 @@ def search_prompt(question=None):
     RESPONDA A "PERGUNTA DO USUÁRIO"
     """
 
-  for k in ("OPENAI_API_KEY", "PGVECTOR_URL"):
+  for k in ("OPENAI_API_KEY", "DATABASE_URL"):
       if not os.getenv(k):
           raise RuntimeError(f"A variável de ambiente {k} não está definida")
 
-  if not (_pgvector_collection := os.getenv("PGVECTOR_COLLECTION") or os.getenv("PGVETCOR_COLLECTION")):
+  if not (_pgvector_collection := os.getenv("PGVECTOR_COLLECTION") or os.getenv("PG_VECTOR_COLLECTION_NAME")):
       raise RuntimeError(
-          "Defina PGVECTOR_COLLECTION no .env (PGVETCOR_COLLECTION também é aceito por compatibilidade)"
+          "Defina PGVECTOR_COLLECTION no .env (PG_VECTOR_COLLECTION_NAME também é aceito por compatibilidade)"
       )
     
   query = "Tell me more about the gpt-5 thinking evaluation and performance results comparing to gpt-4"
@@ -64,7 +64,7 @@ def search_prompt(question=None):
   store = PGVector(
     embeddings=embeddings,
     collection_name=_pgvector_collection,
-    connection=os.getenv("PGVECTOR_URL"),
+    connection=os.getenv("DATABASE_URL"),
     use_jsonb=True,
   )
 
